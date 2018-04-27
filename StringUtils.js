@@ -1,7 +1,7 @@
 ;
 (function() {
 
-    function StrUtils() {
+    StrUtils = function() {
 
     }
 
