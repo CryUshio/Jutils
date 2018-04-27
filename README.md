@@ -8,5 +8,5 @@
 eg: StrUtils.js
 ```javascript
 let strUtils = new StrUtils();
-strUtils.reverseStr("abcd");  //"bcda"
+strUtils.reverse("abcd");  //"bcda"
 ```
