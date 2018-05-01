@@ -1,41 +1,39 @@
 ;
 (function() {
 
-    StrUtils = function() {
-
+    StrUtils = function(type) {
+        if (type === true) {
+            for (func in StrUtils.prototype) {
+                String.prototype[func] = StrUtils.prototype[func];
+            }
+        }
     }
 
     StrUtils.prototype = {
-        isStrOrArr: function(item) {
-            if (typeof item === 'string') {
-                return 'string';
-            }
-            if (item instanceof Array) {
-                return 'array';
-            }
-            return false;
+        isStr: function(item) {
+            return this instanceof String ? true : typeof item === 'string';
         },
-        swap: function(strArr, a, b) {
-            if (!this.isStrOrArr(strArr) || !strArr) {
-                return;
+        swap: function() {
+            let [str, a, b] = this instanceof String ? [this, ...arguments] : [...arguments];
+            if (!this.isStr(str) && !(str instanceof Array) || typeof(a + b) !== 'number') {
+                throw new TypeError();
             }
-            if (this.isStrOrArr(strArr) == 'string') {
-                strArr = strArr.split("");
-            }
+            let strArr = this.isStr(str) ? str.split("") : str;
             let temp = strArr[a];
             strArr[a] = strArr[b];
             strArr[b] = temp;
             return strArr.join("");
         },
         reverse: function(str) {
-            if (typeof str !== 'string' || !str) {
-                return;
+            str = this instanceof String ? this : str;
+            if (!this.isStr(str)) {
+                throw new TypeError();
             }
             let strArr = str.split("");
             let p = 0,
                 q = strArr.length - 1;
             for (; p < q; p++, q--) {
-                this.swap(strArr, p, q);
+                StrUtils.prototype.swap(strArr, p, q);
             }
             return strArr.join("");
         }
