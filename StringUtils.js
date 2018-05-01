@@ -33,7 +33,9 @@
             let p = 0,
                 q = strArr.length - 1;
             for (; p < q; p++, q--) {
-                StrUtils.prototype.swap(strArr, p, q);
+                let temp = strArr[p];
+                strArr[p] = strArr[q];
+                strArr[q] = temp;
             }
             return strArr.join("");
         }
