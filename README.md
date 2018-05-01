@@ -8,16 +8,16 @@ This is a collection of functions I wrote down for accumulation.
 ## details
 #### 1.Event
 * addSubscribe()  //添加订阅，need 2 parameters [eventType, subscriber]
-* publish()  //发布订阅，need an object that contains a key 'type'
+* publish()  //发布订阅，need an object that contains a key 'type', publish({type:'sth'})
 * removeSubscribe()  //删除订阅，need 2 parameters [eventType, subscriber]
 
 #### 2.String
-* swap() //swap string, swap(str, indexA, indexB)
-* reverse()  //reverse it, reverse(str);
+* swap() //swap string, swap(str, indexA, indexB), str.swap(a, b)
+* reverse()  //reverse it, reverse(str), str.reverse()
 
 #### 3.Array
-* isArr()  //check it is Array or not, isArr(arr);
-* swap()  
+* isArr()  //check it is Array or not, isArr(arr), arr.isArr()
+* swap()  //ditto
 * ascSort()  //升序，ascending order
 * desSort()  //降序，decending order
 * deweight() //去重，removal of repetition
@@ -27,10 +27,12 @@ This is a collection of functions I wrote down for accumulation.
 eg: StringUtils.js
 ```javascript
 let strUtils = new StrUtils();
-strUtils.reverse("abcd");  //"bcda"
+let res = strUtils.reverse("abcd");
+alert(res);  //"bcda"
 
 new StrUtils(true);  //if you use 'true' to initialize, you can use them as prototype function.
-"abcd".reverse();  //"bcda"
+res = "abcd".reverse(); 
+alert(res);  //"bcda"
 ```
 eg: EventUtils.js
 ```javascript
