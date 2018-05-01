@@ -2,8 +2,7 @@
 (function() {
 
     ArrUtils = function(type) {
-        type = type === true ? true : false;
-        if (type) {
+        if (type === true) {
             for (func in ArrUtils.prototype) {
                 Array.prototype[func] = ArrUtils.prototype[func];
             }
