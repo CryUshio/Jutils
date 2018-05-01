@@ -11,11 +11,19 @@
 
     ArrUtils.prototype = {
         isArr: function(item) {
+            item = this instanceof Array ? this : item;
             return item instanceof Array;
         },
-        swap: function(arr, a, b) {
-            if (!this.isArr(arr)) {
-                return;
+        swap: function() {
+            let arr, a, b;
+            if (this instanceof Array) {
+                arr = this;
+                [a, b] = [...arguments];
+            } else {
+                [arr, a, b] = [...arguments];
+            }
+            if (!this.isArr(arr) || typeof(a + b) !== 'number') {
+                return new TypeError();
             }
             let temp = arr[a];
             arr[a] = arr[b];
@@ -23,24 +31,28 @@
             return arr;
         },
         ascSort: function(arr) {
+            arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
                 return;
             }
             return Array.prototype.sort.call(arr, (x, y) => x - y);
         },
         desSort: function(arr) {
+            arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
                 return;
             }
             return Array.prototype.sort.call(arr, (x, y) => y - x);
         },
         deweight: function(arr) {
+            arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
                 return;
             }
             return [...new Set(arr)];
         },
         deepCopy: function(arr) {
+            arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
                 return;
             }
