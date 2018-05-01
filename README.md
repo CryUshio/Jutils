@@ -6,11 +6,16 @@
 
 所以，以上：）
 ## details
-#### 1.String
+#### 1.Event
+* addSubscribe()  //添加订阅，need 2 parameters [eventType, subscriber]
+* publish()  //发布订阅，need an object that contains a key 'type'
+* removeSubscribe()  //删除订阅，need 2 parameters [eventType, subscriber]
+
+#### 2.String
 * swap() //swap string, swap(str, indexA, indexB)
 * reverse()  //reverse it, reverse(str);
 
-#### 2.Array
+#### 3.Array
 * isArr()  //check it is Array or not, isArr(arr);
 * swap()  
 * ascSort()  //升序，ascending order
