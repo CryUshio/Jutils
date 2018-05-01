@@ -27,28 +27,28 @@
         ascSort: function(arr) {
             arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
-                return;
+                throw new TypeError();
             }
             return Array.prototype.sort.call(arr, (x, y) => x - y);
         },
         desSort: function(arr) {
             arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
-                return;
+                throw new TypeError();
             }
             return Array.prototype.sort.call(arr, (x, y) => y - x);
         },
         deweight: function(arr) {
             arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
-                return;
+                throw new TypeError();
             }
             return [...new Set(arr)];
         },
         deepCopy: function(arr) {
             arr = this instanceof Array ? this : arr;
             if (!this.isArr(arr)) {
-                return;
+                throw new TypeError();
             }
             let res = [];
             for (let i = 0; i < arr.length; i++) {
