@@ -1,10 +1,10 @@
 # Jutils
 一些常用javascript方法，仅支持es6及以上.  
-## 备注
-这是自己平时用到的一些方法集合起来的一个项目，作为一种积累。
-> 大佬都有自己的代码积累
+Some commonly used javascript functions and only support ES6 or later.
+## remarks
+这是自己平时需要用而写的一些方法的合集，作为一种积累。
+This is a collection of functions I wrote down for accumulation.
 
-所以，以上：）
 ## details
 #### 1.Event
 * addSubscribe()  //添加订阅，need 2 parameters [eventType, subscriber]
