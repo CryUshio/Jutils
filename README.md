@@ -18,7 +18,7 @@
 * deweight() //去重，removal of repetition
 * deepCopy() //深拷贝，deep copy
 
-# How to use
+## How to use
 eg: StringUtils.js
 ```javascript
 let strUtils = new StrUtils();
