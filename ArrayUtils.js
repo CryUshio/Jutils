@@ -15,13 +15,7 @@
             return item instanceof Array;
         },
         swap: function() {
-            let arr, a, b;
-            if (this instanceof Array) {
-                arr = this;
-                [a, b] = [...arguments];
-            } else {
-                [arr, a, b] = [...arguments];
-            }
+            let [arr, a, b] = this instanceof Array ? [this, ...arguments] : [...arguments];
             if (!this.isArr(arr) || typeof(a + b) !== 'number') {
                 return new TypeError();
             }
