@@ -17,7 +17,7 @@
         swap: function() {
             let [arr, a, b] = this instanceof Array ? [this, ...arguments] : [...arguments];
             if (!this.isArr(arr) || typeof(a + b) !== 'number') {
-                return new TypeError();
+                throw new TypeError();
             }
             let temp = arr[a];
             arr[a] = arr[b];
