@@ -1,8 +1,8 @@
 # Jutils
-一些常用javascript方法，仅支持es6及以上.  
+一些常用javascript方法，仅支持es6及以上.  
 Some commonly used javascript functions and only support ES6 or later.
 ## remarks
-这是自己平时需要用而写的一些方法的合集，作为一种积累。
+这是自己平时需要用而写的一些方法的合集，作为一种积累。  
 This is a collection of functions I wrote down for accumulation.
 
 ## details
