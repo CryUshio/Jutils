@@ -27,3 +27,17 @@ strUtils.reverse("abcd");  //"bcda"
 new StrUtils(true);  //if you use 'true' to initialize, you can use them as prototype function.
 "abcd".reverse();  //"bcda"
 ```
+eg: EventUtils.js
+```javascript
+var e = new EventUtils();
+var hello = function(event){
+  console.log(event.name + " says hello");
+}
+e.addSubscribe('hey', hello);
+e.publish({
+  type: 'hey',
+  name: 'nick'
+});
+//nick says hello
+e.removeSubscribe('hey', hello);
+```
