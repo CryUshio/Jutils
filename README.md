@@ -19,11 +19,11 @@
 * deepCopy() //深拷贝，deep copy
 
 # How to use
-eg: StrUtils.js
+eg: StringUtils.js
 ```javascript
 let strUtils = new StrUtils();
 strUtils.reverse("abcd");  //"bcda"
 
-let strUtils = new StrUtils(true);  //if you use 'true' to initialize, you can use them as prototype function.
+new StrUtils(true);  //if you use 'true' to initialize, you can use them as prototype function.
 "abcd".reverse();  //"bcda"
 ```
