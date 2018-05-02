@@ -15,7 +15,7 @@
         },
         swap: function() {
             let [str, a, b] = this instanceof String ? [this, ...arguments] : [...arguments];
-            if (!this.isStr(str) && !(str instanceof Array) || typeof(a + b) !== 'number') {
+            if (!this.isStr(str) || typeof(a + b) !== 'number') {
                 throw new TypeError( !this.isStr(str) ? "parameter [str] for operation object must be String." : "parameters [a,b] for index must be Number.");
             }
             let strArr = this.isStr(str) ? str.split("") : str;
