@@ -31,11 +31,11 @@
             }
             let strArr = str.split("");
             let p = 0,
-                q = strArr.length - 1;
-            for (; p < q; p++, q--) {
+                len = strArr.length - 1;
+            for (; p <= len/2; p++) {
                 let temp = strArr[p];
-                strArr[p] = strArr[q];
-                strArr[q] = temp;
+                strArr[p] = strArr[len-p];
+                strArr[len-p] = temp;
             }
             return strArr.join("");
         }
