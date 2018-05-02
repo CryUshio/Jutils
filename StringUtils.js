@@ -16,7 +16,7 @@
         swap: function() {
             let [str, a, b] = this instanceof String ? [this, ...arguments] : [...arguments];
             if (!this.isStr(str) && !(str instanceof Array) || typeof(a + b) !== 'number') {
-                throw new TypeError();
+                throw new TypeError( !this.isStr(str) ? "parameter [str] for operation object must be String." : "parameters [a,b] for index must be Number.");
             }
             let strArr = this.isStr(str) ? str.split("") : str;
             let temp = strArr[a];
@@ -27,7 +27,7 @@
         reverse: function(str) {
             str = this instanceof String ? this : str;
             if (!this.isStr(str)) {
-                throw new TypeError();
+                throw new TypeError("parameter [str] for operation object must be String.");
             }
             let strArr = str.split("");
             let p = 0,
