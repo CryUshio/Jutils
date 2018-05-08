@@ -3,6 +3,7 @@
   SortUtils = {};
   
   SortUtils.swap = function(arr, pre, cur){
+    //[arr[pre], arr[cur]] = [arr[cur], arr[pre]];
     let temp = arr[pre];
     arr[pre] = arr[cur];
     arr[cur] = temp;
