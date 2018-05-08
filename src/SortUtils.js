@@ -29,7 +29,22 @@
           min = j;
         }
       }
-      swap(arr, i, min);
+      this.swap(arr, i, min);
+    }
+    return arr;
+  }
+  
+  function insectionSort(arr){
+    let len = arr.length;
+    let cur, tmp;
+    for(let i=1; i<len; i++){
+      cur = i;
+      tmp = arr[i];
+      while(cur>0 && arr[cur-1]>tmp){
+        arr[cur] = arr[cur-1];
+        cur--;
+      }
+      arr[cur] = tmp;
     }
     return arr;
   }
