@@ -34,7 +34,7 @@
     return arr;
   }
   
-  function insectionSort(arr){
+  SortUtils.insectionSort = function(arr){
     let len = arr.length;
     let cur, tmp;
     for(let i=1; i<len; i++){
@@ -47,6 +47,38 @@
       arr[cur] = tmp;
     }
     return arr;
+  }
+  
+  SortUtils.mergeSort = function(arr){
+    return merge(arr);
+
+    function merge(arr){
+      if(arr.length == 1){
+        return arr;
+      }
+      let mid = Math.floor(arr.length / 2);
+      return sort(merge(arr.slice(0, mid)), merge(arr.slice(mid)));
+    }
+
+    function sort(larr, rarr){
+      let res = [];
+      while(larr.length && rarr.length){
+        if(larr[0]<rarr[0]){
+          res.push(larr.shift());
+        }
+        else {
+          res.push(rarr.shift());
+        }
+      }
+      if(larr.length){
+        res = res.concat(larr);
+      }
+      if(rarr.length){
+        res = res.concat(rarr);
+      }
+
+      return res;
+    }
   }
   
   SortUtils.quickSort = function(arr, left, right){
