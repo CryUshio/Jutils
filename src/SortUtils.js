@@ -1,4 +1,10 @@
 ;(function(){
+  
+  SortUtils = {
+    quickSort: quickSort,
+    bubbleSort: bubbleSort
+  }
+  
   function swap(arr, pre, cur){
     let temp = arr[pre];
     arr[pre] = arr[cur];
@@ -26,6 +32,20 @@
     swap(arr, pos, store - 1);
     quickSort(arr, left, store - 1);
     quickSort(arr, store, right);
-    return;
+    return arr;
   }
+  
+  function bubbleSort(arr){
+    let len = arr.length;
+    for(let i=0; i<len; i++){
+      for(let j=i; j<len; j++){
+        if(arr[i]>arr[j]){
+          swap(arr, i, j);
+        }
+      }
+    }
+    return arr;
+  }
+  
+  
 })();
