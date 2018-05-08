@@ -76,7 +76,6 @@
       if(rarr.length){
         res = res.concat(rarr);
       }
-
       return res;
     }
   }
@@ -84,24 +83,60 @@
   SortUtils.quickSort = function(arr, left, right){
     left = typeof left == 'number' ? left : 0;
     right = typeof right == 'number' ? right : arr.length;
-
     if(left >= right - 1){
       return;
     }
-
     let pos = left,
         store = pos + 1;
-
     for(let i=store; i<right; i++){
       if(arr[i]<=arr[pos]){
         this.swap(arr, store, i);
         store ++;
       }
     }
-
     swap(arr, pos, store - 1);
     quickSort(arr, left, store - 1);
     quickSort(arr, store, right);
     return arr;
   }
+  
+  SortUtils.heapSort = function(arr){
+    let self = this;
+    let len = arr.length;
+    return main(arr);
+
+    function main(arr){
+      heapInit(arr);
+      while(--len){
+        self.swap(arr, 0, len);
+        heapAdjust(arr, 0, true);
+      }
+      return arr;
+    }
+    
+    function heapInit(arr){
+      let i = Math.floor(len/2) - 1;
+      while(i>=0){
+        heapAdjust(arr, i, false);
+        i--;
+      }
+    }
+    
+    function heapAdjust(arr, parent, direction){ //direction: true - top to bottom
+      let lchild = parent * 2 + 1;
+      let rchild = parent * 2 + 2;
+      let large = parent;
+      if(lchild<len && arr[large]<arr[lchild]){
+        large = lchild;
+      }
+      if(rchild<len && arr[large]<arr[rchild]){
+        large = rchild;
+      }
+      self.swap(arr, parent, large);
+      if(direction && large != parent){
+        heapAdjust(arr, large);
+      }
+    }
+  }
+  
 })();
