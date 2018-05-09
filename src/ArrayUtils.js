@@ -14,6 +14,10 @@
             item = this instanceof Array ? this : item;
             return item instanceof Array;
         },
+        empty: function(arr) {
+            arr = this instanceof Array ? this : arr;
+            return arr.length ? false : true;
+        },
         swap: function() {
             let [arr, a, b] = this instanceof Array ? [this, ...arguments] : [...arguments];
             if (!this.isArr(arr) || typeof(a + b) !== 'number') {
